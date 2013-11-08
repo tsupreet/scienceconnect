@@ -1,0 +1,86 @@
+{% extends 'base.twig' %}
+
+{% block navigation %}
+{% endblock navigation %}
+
+{% block header %}
+{% endblock header %}
+
+{% block main %}
+   {% include 'navbar.twig' %}
+   <div class="belowNavbar">
+      <div class="container-narrow">                 
+      <fieldset>
+        <div id="legend">
+          <legend class="">User Profile</legend>
+        </div>
+
+        <div class="control-group">
+          <!-- Name -->
+          <label class="control-label" for="name">Name</label>
+          <div class="controls">
+              <input type="text" id="name" name="name" placeholder="" value="{{userinfo.name}}" readonly class="input-xlarge" required>        
+          </div>
+        </div>
+
+        <div class="control-group">
+          <!-- Email -->
+          <label class="control-label" for="email">Email</label>
+          <div class="controls">
+              <input type="text" id="email" name="email" placeholder="" value="{{userinfo.email}}" readonly class="input-xlarge" required>        
+          </div>
+        </div>    
+
+        <div class="control-group">
+          <!-- University -->
+          <label class="control-label" for="university">University</label>
+          <div class="controls">
+              <input type="text" id="university" name="university" placeholder="" value="{{userinfo.university}}" readonly class="input-xlarge" required>        
+          </div>
+        </div>          
+
+        <div class="control-group">
+          <!-- Address -->
+          <label class="control-label" for="Address">Address</label>
+          <div class="controls">
+              <input type="text" id="address" name="address" placeholder="" value="{{userinfo.address}}" readonly class="input-xlarge" required>        
+          </div>
+        </div>
+
+        <div class="control-group">
+          <!-- Number -->
+          <label class="control-label" for="number">Contact Number</label>
+          <div class="controls">
+              <input type="text" id="number" name="number" placeholder="" value="{{userinfo.number}}" readonly class="input-xlarge" required>        
+          </div>
+        </div>          
+     </fieldset>             
+     
+     <a href="#myModal" role="button" class="btn" data-toggle="modal">Contact User</a>
+          
+    <!-- Modal -->
+    <div id="myModal" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">x</button>
+        <h3 id="myModalLabel">Send Message</h3>
+      </div>
+      <div class="modal-body">
+        <form accept-charset="UTF-8" action="sendmessage" method="POST">
+            <input type="text" id="subject" name="subject" placeholder="Subject" required>        
+            <textarea class="span7" id="body" name="body"
+            placeholder="Type in your message" rows="10" required></textarea>  
+            <input type="hidden" id="to" name="to" value="{{userinfo.emailID}}">
+            <button class="btn" data-dismiss="modal" aria-hidden="true">Cancel</button>
+            <button class="btn btn-primary" type="submit">Send</button>              
+        </form>
+      </div>
+    </div>          
+   </div>              
+  </div>
+{% endblock main %}
+
+{% block scripts %}   
+{%endblock scripts %}
+
+{% block footer %}
+{% endblock footer %}

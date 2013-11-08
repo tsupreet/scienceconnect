@@ -1,0 +1,79 @@
+{% extends 'base.twig' %}
+
+{% block navigation %}
+{% endblock navigation %}
+
+{% block header %}
+{% endblock header %}
+
+{% block main %}
+    
+    <div class="container-narrow">        
+       <form class="form-horizontal" action='addnewprofile' method="POST" >
+            <fieldset>
+                <div id="legend">
+                    <legend class="">User Profile</legend>
+                </div>
+
+                <div class="control-group">
+                  <!-- Name -->
+                  <label class="control-label" for="name">Name</label>
+                  <div class="controls">
+                      <input type="text" id="name" name="name" placeholder="" value="{{name}}" class="input-xlarge" required>        
+                  </div>
+                </div>
+
+                <div class="control-group">
+                  <!-- Email -->
+                  <label class="control-label" for="email">Email</label>
+                  <div class="controls">
+                      <input type="text" id="newemail" name="newemail" placeholder="" value="{{newemail}}" class="input-xlarge" required>        
+                  </div>
+                </div>    
+
+                <div class="control-group">
+                  <!-- University -->
+                  <label class="control-label" for="university">University</label>
+                  <div class="controls">
+                      <input type="text" id="university" name="university" placeholder="" value="{{university}}" class="input-xlarge" required>        
+                  </div>
+                </div>          
+
+                <div class="control-group">
+                  <!-- Address -->
+                  <label class="control-label" for="Address">Address</label>
+                  <div class="controls">
+                      <input type="text" id="address" name="address" placeholder="" value="{{address}}" class="input-xlarge" required>        
+                  </div>
+                </div>
+
+                <div class="control-group">
+                  <!-- Number -->
+                  <label class="control-label" for="number">Contact Number</label>
+                  <div class="controls">
+                      <input type="text" id="number" name="number" placeholder="" value="{{number}}" class="input-xlarge" required>        
+                  </div>
+                </div>          
+            </fieldset>
+                    
+            <div class="control-group">
+              <!-- Button -->
+              <div class="controls">
+                  <input type=submit class="btn btn-success" value="Save" />
+              </div>
+            </div>
+                    
+        </form>   
+            
+        {% if EmailExists==true %}
+            <label class="text-error">Email already registered!</label>
+        {% endif %}                        
+       </div>
+{% endblock main %}
+
+
+{% block scripts %}   
+{%endblock scripts %}
+
+{% block footer %}
+{% endblock footer %}

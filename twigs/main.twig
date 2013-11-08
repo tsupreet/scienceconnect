@@ -1,0 +1,77 @@
+{% extends 'base.twig' %}
+
+{% block navigation %}
+{% endblock navigation %}
+
+{% block header %}
+        <div class="span12">	    
+        </div>
+{% endblock header %}
+
+{% block main %}
+<div class="container-narrow">
+
+      <div class="masthead">          
+          
+          <div class="nav nav-pills pull-right">
+              <form class="form-inline" action='signin' method="POST">
+
+                  <input type="text" id="email" name="email" class="input-small" placeholder="Email">
+
+            <input type="password" id="password" name="password" class="input-small" placeholder="Password">
+
+            <input type=submit class="btn btn-primary" value="Sign in"/> <br/>                         
+            
+            {% if InvalidLogin==true %}
+              <label class="text-error">Invalid Email/Password!</label>
+            {% endif %}
+
+            </form>           
+      </div>      
+          <h3 class="muted">Science Connect</h3>
+    </div>      
+    <br/>
+      <hr>
+
+
+      <div class="jumbotron">
+        <h1>Research and Innovation!</h1>
+        <p class="lead">Science Connect is an online service created for researchers, business people, and observers to 
+            connect each other.</p>
+        <a class="btn btn-large btn-success" href="signup">Sign up today</a>
+      </div>
+
+      <hr>
+
+      <div class="row-fluid marketing">
+        <div class="span6">
+          <h4>Funding and Careers</h4>
+          <p>Helping you in getting funds from various sources for your research.</p>
+
+          <h4>Supporting your ideas</h4>
+          <p>Upgrade your skills or the capacity of your research organization.</p>
+
+        </div>
+
+        <div class="span6">
+          <h4>Research Projects</h4>
+          <p>Browse through a list of available research projects.</p>
+
+          <h4>Project partners</h4>
+          <p>You can find partners for your project who has similar interests.</p>
+
+        </div>
+      </div>
+
+      <hr>
+
+      <div class="footer">
+        <p>&copy; Science Connect 2013</p>
+      </div>
+
+    </div> <!-- /container --> 
+{% endblock main %}
+
+{% block footer %}
+
+{% endblock footer %}
