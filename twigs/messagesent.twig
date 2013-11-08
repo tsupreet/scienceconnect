@@ -1,0 +1,29 @@
+{% extends 'base.twig' %}
+
+{% block navigation %}
+{% endblock navigation %}
+
+{% block header %}
+{% endblock header %}
+
+{% block main %}
+    
+    {% include 'navbar.twig' %}
+    
+        <div class="belowNavbar">
+           <div class="container-narrow">            
+            <div class="alert alert-block">
+                <h4>Message Sent Successfully!
+                    <a href="{{subd}}/home" class="btn btn-large pull-right">Go Home</a>
+                </h4>
+                <p>To- {{userinfo.name}}</p>
+            </div>              
+           </div>              
+       </div>
+{% endblock main %}
+
+{% block scripts %}    
+{%endblock scripts %}
+
+{% block footer %}
+{% endblock footer %}
